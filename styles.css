@@ -1,14 +1,16 @@
 :root {
-  --ink: #1a2e28;
-  --ink-soft: #3d5a50;
-  --paper: #f3f7f4;
+  --ink: #1e293b;
+  --ink-soft: #64748b;
+  --paper: #ffffff;
   --panel: #ffffff;
-  --line: #c5d4cc;
-  --accent: #0d7a5f;
-  --accent-hover: #0a624c;
-  --accent-soft: #d8efe6;
-  --warn: #9b3b2e;
-  --shadow: 0 18px 40px rgba(26, 46, 40, 0.08);
+  --line: #e2e8f0;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-soft: #dbeafe;
+  --countdown: #facc15;
+  --sparkle: #fde68a;
+  --warn: #dc2626;
+  --shadow: 0 18px 40px rgba(30, 41, 59, 0.08);
   --radius: 18px;
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "DM Sans", system-ui, sans-serif;
@@ -30,9 +32,9 @@ body {
   font-family: var(--font-body);
   color: var(--ink);
   background:
-    radial-gradient(ellipse 90% 60% at 10% -10%, #c8e8dc 0%, transparent 55%),
-    radial-gradient(ellipse 70% 50% at 100% 0%, #dce9e2 0%, transparent 50%),
-    linear-gradient(180deg, #e8f2ec 0%, var(--paper) 45%, #eef4f0 100%);
+    radial-gradient(ellipse 90% 55% at 8% -8%, var(--sparkle) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 45% at 100% 0%, var(--accent-soft) 0%, transparent 48%),
+    var(--paper);
   line-height: 1.5;
 }
 
@@ -48,7 +50,22 @@ body {
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   margin: 0 0 0.85rem;
+}
+
+.brand-logo {
+  width: clamp(2.5rem, 7vw, 3.5rem);
+  height: clamp(2.5rem, 7vw, 3.5rem);
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  margin: 0;
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 7vw, 3.6rem);
   font-weight: 700;
@@ -176,7 +193,7 @@ body {
 .field select {
   font: inherit;
   color: var(--ink);
-  background: var(--paper);
+  background: #f8fafc;
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: 0.55rem 0.7rem;
@@ -225,8 +242,8 @@ body {
   margin-top: 1.4rem;
   padding: 1.15rem 1.1rem;
   border-radius: 14px;
-  background: linear-gradient(135deg, var(--accent-soft), #eef7f3);
-  border: 1px solid #b7d9cb;
+  background: linear-gradient(135deg, var(--sparkle), #fffbeb);
+  border: 1px solid var(--countdown);
 }
 
 .result.is-visible {
@@ -241,12 +258,17 @@ body {
 
 .result-days {
   margin: 0;
+  display: inline-block;
   font-family: var(--font-display);
   font-size: clamp(2rem, 6vw, 2.75rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--accent);
+  color: var(--ink);
   line-height: 1.1;
+  background: var(--countdown);
+  padding: 0.12em 0.4em;
+  border-radius: 10px;
+  box-shadow: 0 0 0 3px var(--sparkle);
 }
 
 .result-date {
